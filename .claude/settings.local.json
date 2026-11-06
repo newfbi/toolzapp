@@ -1,0 +1,37 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://openrouter.ai/api",
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "stealth/ox-alpha",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "stealth/ox-alpha",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "stealth/ox-alpha",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "stealth/ox-alpha",
+    "MAX_THINKING_TOKENS": "0",
+    "ANTHROPIC_THINKING_DISABLED": "true",
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "4096",
+    "MAX_OUTPUT_TOKENS": "4096",
+    "ANTHROPIC_MAX_TOKENS": "4096",
+    "CLAUDE_AUTO_COMPACT_WINDOW": "1500000"
+  },
+  "permissions": {
+    "allow": [
+      "mcp__neuranix",
+      "Bash(node:*)",
+      "Bash(yarn:*)",
+      "Bash(npm:*)",
+      "Bash(curl:*)",
+      "Bash(php:*)",
+      "Bash(awk 'NR>=169 && NR<=414 {n=split\\($0, arr, /@\\(if|endif|else|elseif\\)\\\\b/\\); m=gsub\\(/@\\(if|endif|else|elseif\\)\\\\b/,\"&\"\\); } NR>=169 && NR<=414 {depth += gsub\\(/@\\(if|endif\\)/,\"&\"\\) ; } END{}' resources/views/livewire/worker-users/index.blade.php)",
+      "Bash(awk 'NR<169{next} NR>414{exit} {c=gsub\\(/@[a-z]+\\\\\\(/,\"&\"\\); line=$0; while\\(match\\(line,/@\\(endif|endforelse|empty|else|elseif|if|forelse\\)\\(?![a-z]\\)/\\)\\){ tok=substr\\(line,RSTART+1,RLENGTH-1\\); line=substr\\(line,RSTART+RLENGTH\\); if\\(tok==\"if\"||tok==\"forelse\"\\)d++; else if\\(tok==\"endif\"||tok==\"endforelse\"\\){d--; if\\(d<0\\){print \"NEGATIVE at \"NR\": \"$0; d=0}} else if\\(tok==\"empty\"\\){} } }' resources/views/livewire/worker-users/index.blade.php)",
+      "Bash(python -)",
+      "Bash(cd \"c:/wamp64/www/public_html_pulse\" && cp /tmp/wu-backup.blade.php resources/views/livewire/worker-users/index.blade.php && echo restaurado)"
+    ],
+    "defaultMode": "auto",
+    "additionalDirectories": [
+      "\\tmp"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "neuranix"
+  ]
+}

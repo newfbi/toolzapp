@@ -1,0 +1,852 @@
+/* ============================================
+   TOOLZAPP LOGIN - PREMIUM DARK THEME
+   ============================================ */
+:root {
+    --primary-color: #176cb5;
+    --primary-dark: #043158;
+    --primary-light: #6eafd7;
+    --bg-dark: #0a0a0f;
+    --bg-darker: #050508;
+    --bg-card: #111118;
+    --bg-card-hover: #1a1a24;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0b8;
+    --text-muted: #6b6b7f;
+    --border-color: #1f1f2e;
+    --gradient-1: radial-gradient(circle, rgb(110 167 215) 2%, rgb(23 108 181) 50%, rgb(4 49 88) 100%);
+    --gradient-2: linear-gradient(135deg, #176cb5 0%, #043158 100%);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 40px rgba(23, 108, 181, 0.4);
+    --shadow-card: 0 8px 24px rgba(4, 49, 88, 0.3);
+}
+
+/* Reset e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Prevenir overflow horizontal */
+body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+.container,
+.login-container,
+.login-form,
+.login-banner {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+html, body {
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
+    background-color: var(--bg-dark);
+    background:
+        radial-gradient(circle at 20% 50%, rgba(23, 108, 181, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(110, 167, 215, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(4, 49, 88, 0.1) 0%, transparent 50%),
+        var(--bg-dark);
+    padding: 20px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-primary);
+    width: 100%;
+    max-width: 100vw;
+}
+
+/* Container principal */
+.login-container {
+    display: flex;
+    flex-direction: row;
+    width: 900px;
+    max-width: 100%;
+    min-height: 90vh;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Banner lateral esquerdo */
+.login-banner {
+    position: relative;
+    width: 50%;
+    background: var(--gradient-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Padrão tracejado */
+.pattern-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-1);
+    z-index: 1;
+    opacity: 0.95;
+}
+
+.pattern-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 40%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+.pattern-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    height: 40%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+
+/* Container do logo e marca */
+.logo-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+.brand h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.brand p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.95;
+    color: var(--text-primary);
+}
+
+/* Formulário de login */
+.login-form {
+    position: relative;
+    width: 50%;
+    max-width: 700px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: var(--bg-card);
+}
+
+.form-header {
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.form-header p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.login-main {
+    margin-top: 20px;
+}
+
+.login-main>p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label,
+label.col-form-label,
+label.form-label {
+    color: var(--text-primary) !important;
+    font-weight: 500 !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+    font-size: 0.95rem !important;
+}
+
+.form-group input,
+.form-control,
+input.form-control {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 16px;
+    background: var(--bg-darker);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-control:focus,
+input.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(23, 108, 181, 0.1);
+    background: var(--bg-card-hover);
+}
+
+.form-group input::placeholder,
+.form-control::placeholder {
+    color: var(--text-muted);
+}
+
+.form-input {
+    position: relative;
+}
+
+.show-hide {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.show-hide:hover {
+    color: var(--primary-color);
+}
+
+.error {
+    color: #ff6b6b;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: block;
+}
+
+.alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+}
+
+.alert-icon {
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.alert-link {
+    color: inherit;
+}
+
+.alert-error,
+.alert-danger {
+    background-color: rgba(255, 107, 107, 0.1);
+    color: #ff6b6b;
+    border-color: rgba(255, 107, 107, 0.3);
+}
+
+.alert-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+    border-color: rgba(255, 193, 7, 0.3);
+}
+
+.alert-success {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+    border-color: rgba(40, 167, 69, 0.3);
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease-out;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+.btn-primary,
+.btn.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: var(--gradient-2);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(23, 108, 181, 0.3);
+}
+
+.btn-primary:hover,
+.btn.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(23, 108, 181, 0.5);
+    background: var(--gradient-2);
+}
+
+.btn-primary:disabled,
+.btn.btn-primary:disabled {
+    background: var(--bg-card-hover);
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.google-login {
+    width: 100%;
+    padding: 12px;
+    background: var(--bg-card-hover);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.google-login img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.google-login:hover {
+    background: var(--bg-card);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.google-login:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.form-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-footer a,
+.link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.form-footer a:hover,
+.link:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+/* Links no formulário */
+.login-main a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-main a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+/* Estilos para o tema-form do Bootstrap */
+.theme-form .form-group {
+    margin-bottom: 20px;
+}
+
+.theme-form .col-form-label,
+.theme-form .form-label {
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 0.95rem;
+}
+
+.theme-form .form-control,
+.theme-form input.form-control {
+    background: var(--bg-darker) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+.theme-form .form-control:focus,
+.theme-form input.form-control:focus {
+    background: var(--bg-card-hover) !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(23, 108, 181, 0.1) !important;
+    color: var(--text-primary) !important;
+}
+
+.theme-form .form-control:read-only {
+    background: var(--bg-card);
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.theme-form .form-control::placeholder {
+    color: var(--text-muted);
+}
+
+/* Estilos para informações do patrocinador */
+.sponsor-info {
+    margin: 1rem 0;
+    padding: 16px;
+    background: rgba(23, 108, 181, 0.1);
+    border: 1px solid rgba(23, 108, 181, 0.3);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.sponsor-info strong {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    display: block;
+}
+
+.sponsor-name {
+    color: var(--primary-light);
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 4px;
+}
+
+/* Estilos para mensagens de erro do Livewire */
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.mt-2 .text-danger,
+.mt-2 .text-sm {
+    color: #ff6b6b;
+    font-size: 0.875rem;
+}
+
+/* Estilos para input-error component */
+x-input-error,
+[x-input-error] {
+    display: block;
+}
+
+x-input-error ul,
+[x-input-error] ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+}
+
+x-input-error li,
+[x-input-error] li {
+    color: #ff6b6b;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Sobrescrever classes Tailwind do input-error */
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.text-red-600,
+.dark\:text-red-400 {
+    color: #ff6b6b !important;
+}
+
+.space-y-1>*+* {
+    margin-top: 0.25rem;
+}
+
+/* Ajustes para labels com pt-0 */
+.pt-0 {
+    padding-top: 0;
+}
+
+/* Estilos para text-danger */
+.text-danger {
+    color: #ff6b6b;
+}
+
+/* Estilos adicionais para garantir compatibilidade */
+.form-group .text-danger {
+    color: #ff6b6b;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+/* Ajustes para mb-0, mb-3, etc */
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.ms-2 {
+    margin-left: 0.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-end {
+    text-align: right;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.position-relative {
+    position: relative;
+}
+
+/* ============================================
+   SOBRESCRITA DE ESTILOS DO BOOTSTRAP
+   Garantir que o tema escuro sempre prevaleça
+   ============================================ */
+
+/* Sobrescrever estilos do Bootstrap que podem interferir */
+body.login-page,
+html body {
+    background-color: var(--bg-dark) !important;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(23, 108, 181, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(110, 167, 215, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(4, 49, 88, 0.1) 0%, transparent 50%),
+        var(--bg-dark) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Garantir que inputs do Bootstrap usem tema escuro */
+body .form-control,
+body input[type="text"],
+body input[type="email"],
+body input[type="password"] {
+    background-color: var(--bg-darker) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+body .form-control:focus,
+body input[type="text"]:focus,
+body input[type="email"]:focus,
+body input[type="password"]:focus {
+    background-color: var(--bg-card-hover) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 0 0 3px rgba(23, 108, 181, 0.1) !important;
+}
+
+/* Garantir que labels usem cor clara */
+body label,
+body .form-label,
+body .col-form-label {
+    color: var(--text-primary) !important;
+}
+
+/* Garantir que textos usem cor clara */
+body p,
+body span,
+body div {
+    color: inherit;
+}
+
+body .text-muted {
+    color: var(--text-muted) !important;
+}
+
+body .text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+/* Ajustes para telas médias */
+@media (max-width: 1400px) {
+    .login-container {
+        width: 95%;
+        max-width: 900px;
+    }
+
+    .login-form {
+        width: 60%;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .login-container {
+        width: 95%;
+        max-width: 900px;
+    }
+
+    .login-form {
+        width: 80%;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .login-container {
+        width: 95%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    html, body {
+        padding: 10px 8px !important;
+    }
+
+    .login-container {
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        border-radius: 12px !important;
+        margin: 0 !important;
+    }
+
+    .login-banner,
+    .login-form {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .login-banner {
+        height: 200px !important;
+        min-height: 200px !important;
+        padding: 20px !important;
+    }
+
+    .logo {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    .brand h1 {
+        font-size: 1.75rem !important;
+    }
+
+    .brand p {
+        font-size: 0.9rem !important;
+    }
+
+    .login-form {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 25px 20px !important;
+        max-height: none !important;
+        overflow-x: hidden !important;
+    }
+
+    .form-header {
+        margin-bottom: 20px !important;
+    }
+
+    .form-header h2 {
+        font-size: 1.5rem !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .form-header p {
+        font-size: 0.85rem !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .login-main {
+        margin-top: 15px !important;
+    }
+
+    .login-main>p {
+        font-size: 0.9rem !important;
+        word-wrap: break-word !important;
+    }
+
+    .form-group {
+        margin-bottom: 18px !important;
+    }
+
+    .form-group input,
+    .form-control {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 12px 14px !important;
+        font-size: 0.95rem !important;
+    }
+
+    .form-group label,
+    label.col-form-label,
+    label.form-label {
+        font-size: 0.9rem !important;
+    }
+
+    .btn-primary,
+    .btn.btn-primary {
+        padding: 14px !important;
+        font-size: 0.95rem !important;
+    }
+
+    .sponsor-info {
+        margin: 0.75rem 0 !important;
+        padding: 12px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .sponsor-info strong {
+        font-size: 0.85rem !important;
+    }
+
+    .sponsor-name {
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    html, body {
+        padding: 8px 5px !important;
+    }
+
+    .login-container {
+        border-radius: 8px !important;
+    }
+
+    .login-banner {
+        height: 180px !important;
+        min-height: 180px !important;
+        padding: 15px !important;
+    }
+
+    .logo {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .brand h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .brand p {
+        font-size: 0.85rem !important;
+    }
+
+    .login-form {
+        padding: 20px 15px !important;
+    }
+
+    .form-header h2 {
+        font-size: 1.35rem !important;
+    }
+
+    .form-header p {
+        font-size: 0.8rem !important;
+    }
+
+    .form-group input,
+    .form-control {
+        padding: 10px 12px !important;
+        font-size: 0.9rem !important;
+    }
+
+    .btn-primary,
+    .btn.btn-primary {
+        padding: 12px !important;
+        font-size: 0.9rem !important;
+    }
+}

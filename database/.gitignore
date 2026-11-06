@@ -1,0 +1,4 @@
+*.sqlite*
+*.sqlite-journal
+*.sql
+*.sql.gz
